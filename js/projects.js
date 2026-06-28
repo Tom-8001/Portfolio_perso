@@ -28,7 +28,6 @@ const PROJECTS = [
     ],
     tags: ["Python", "RayStation", "DICOM", "Radiothérapie", "EQD2", "BED", "Physique médicale"],
     tagsColor: { "Python": "blue", "DICOM": "green", "Radiothérapie": "red" },
-    links: { github: "", demo: "" }
   },
   {
     id: 2,
@@ -53,7 +52,6 @@ const PROJECTS = [
     ],
     tags: ["Python", "ComfyUI", "FLUX.2", "Ollama", "IA Générative", "fal.ai", "LoRA"],
     tagsColor: { "Python": "blue", "ComfyUI": "purple", "LoRA": "orange" },
-    links: { github: "", demo: "" }
   },
   {
     id: 3,
@@ -78,7 +76,6 @@ const PROJECTS = [
     ],
     tags: ["Python", "Whisper", "yt-dlp", "OpenCV", "PIL", "FFmpeg", "Automatisation"],
     tagsColor: { "Python": "blue", "Whisper": "green", "FFmpeg": "orange" },
-    links: { github: "", demo: "" }
   },
   {
     id: 4,
@@ -103,7 +100,6 @@ const PROJECTS = [
     ],
     tags: ["Python", "Ollama", "Gemma", "Binance", "Trading", "Backtesting", "yfinance"],
     tagsColor: { "Python": "blue", "Ollama": "green", "Trading": "orange" },
-    links: { github: "", demo: "" }
   },
   {
     id: 5,
@@ -128,7 +124,6 @@ const PROJECTS = [
     ],
     tags: ["Node.js", "Express", "MongoDB", "JavaScript", "HTML/CSS", "Render"],
     tagsColor: { "Node.js": "green", "MongoDB": "green", "Express": "blue" },
-    links: { github: "", demo: "" }
   },
   {
     id: 6,
@@ -153,7 +148,6 @@ const PROJECTS = [
     ],
     tags: ["Babylon.js", "JavaScript", "HTML/CSS", "Node.js", "Génération procédurale"],
     tagsColor: { "Babylon.js": "orange", "JavaScript": "blue" },
-    links: { github: "", demo: "" }
   },
   {
     id: 7,
@@ -178,7 +172,6 @@ const PROJECTS = [
     ],
     tags: ["JavaScript", "HTML/CSS", "A*", "Génération procédurale", "DOM"],
     tagsColor: { "JavaScript": "blue", "A*": "orange" },
-    links: { github: "", demo: "" }
   },
   {
     id: 8,
@@ -203,7 +196,6 @@ const PROJECTS = [
     ],
     tags: ["JavaScript", "Canvas 2D", "HTML/CSS", "Vanilla JS"],
     tagsColor: { "JavaScript": "blue", "Canvas 2D": "orange" },
-    links: { github: "", demo: "" }
   },
   {
     id: 9,
@@ -228,7 +220,6 @@ const PROJECTS = [
     ],
     tags: ["Java", "Maven", "IA de jeu", "SOLID", "Architecture logicielle"],
     tagsColor: { "Java": "orange", "Maven": "red", "SOLID": "blue" },
-    links: { github: "", demo: "" }
   },
   {
     id: 10,
@@ -252,7 +243,6 @@ const PROJECTS = [
     ],
     tags: ["ComfyUI", "Trellis2", "3D", "Python", "IA Générative", "GPU"],
     tagsColor: { "ComfyUI": "purple", "3D": "orange", "GPU": "green" },
-    links: { github: "", demo: "" }
   },
   {
     id: 11,
@@ -277,7 +267,6 @@ const PROJECTS = [
     ],
     tags: ["CrewAI", "Ollama", "LM Studio", "Python", "Agents IA", "VS Code"],
     tagsColor: { "CrewAI": "purple", "Python": "blue", "Agents IA": "green" },
-    links: { github: "", demo: "" }
   },
   {
     id: 12,
@@ -302,7 +291,6 @@ const PROJECTS = [
     ],
     tags: ["Babylon.js", "JavaScript", "Roguelike", "3D", "HTML/CSS"],
     tagsColor: { "Babylon.js": "orange", "Roguelike": "red" },
-    links: { github: "", demo: "" }
   },
   {
     id: 13,
@@ -327,7 +315,6 @@ const PROJECTS = [
     ],
     tags: ["Python", "ComfyUI", "WAN 2.2", "fal.ai", "Kling 3.0", "FFmpeg", "IA Vidéo"],
     tagsColor: { "Python": "blue", "fal.ai": "purple", "FFmpeg": "orange" },
-    links: { github: "", demo: "" }
   }
 ];
 
