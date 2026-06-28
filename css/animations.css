@@ -1,0 +1,146 @@
+/* ============================================================
+   animations.css — Keyframes, effets d'entrée, particules
+   ============================================================ */
+
+/* ── Keyframes ── */
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(30px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+@keyframes fadeInLeft {
+  from { opacity: 0; transform: translateX(-30px); }
+  to   { opacity: 1; transform: translateX(0); }
+}
+@keyframes fadeInRight {
+  from { opacity: 0; transform: translateX(30px); }
+  to   { opacity: 1; transform: translateX(0); }
+}
+@keyframes scaleIn {
+  from { opacity: 0; transform: scale(0.9); }
+  to   { opacity: 1; transform: scale(1); }
+}
+@keyframes glowPulse {
+  0%, 100% { box-shadow: 0 0 20px var(--purple-glow); }
+  50%       { box-shadow: 0 0 40px var(--purple-glow-strong), 0 0 70px var(--purple-glow); }
+}
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50%       { transform: translateY(-12px); }
+}
+@keyframes pulse-dot {
+  0%, 100% { opacity: 1; }
+  50%       { opacity: 0.3; }
+}
+@keyframes gradientShift {
+  0%   { background-position: 0% 50%; }
+  50%  { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+@keyframes scanline {
+  from { transform: translateY(-100%); }
+  to   { transform: translateY(200%); }
+}
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50%       { opacity: 0; }
+}
+@keyframes particleFloat {
+  0%   { transform: translateY(0) rotate(0deg); opacity: 0; }
+  10%  { opacity: 1; }
+  90%  { opacity: 1; }
+  100% { transform: translateY(-100vh) rotate(720deg); opacity: 0; }
+}
+
+/* ── Entrée au scroll ── */
+.reveal {
+  opacity: 0; transform: translateY(30px);
+  transition: opacity 0.7s ease, transform 0.7s ease;
+}
+.reveal.visible { opacity: 1; transform: translateY(0); }
+.reveal-left {
+  opacity: 0; transform: translateX(-30px);
+  transition: opacity 0.7s ease, transform 0.7s ease;
+}
+.reveal-left.visible { opacity: 1; transform: translateX(0); }
+.reveal-right {
+  opacity: 0; transform: translateX(30px);
+  transition: opacity 0.7s ease, transform 0.7s ease;
+}
+.reveal-right.visible { opacity: 1; transform: translateX(0); }
+.reveal-scale {
+  opacity: 0; transform: scale(0.92);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+.reveal-scale.visible { opacity: 1; transform: scale(1); }
+
+/* ── Délais ── */
+.delay-1 { transition-delay: 0.1s; }
+.delay-2 { transition-delay: 0.2s; }
+.delay-3 { transition-delay: 0.3s; }
+.delay-4 { transition-delay: 0.4s; }
+.delay-5 { transition-delay: 0.5s; }
+
+/* ── Hero intro ── */
+.hero-animate { animation: fadeInUp 0.8s ease forwards; }
+.hero-animate-1 { animation: fadeInUp 0.8s 0.1s ease both; }
+.hero-animate-2 { animation: fadeInUp 0.8s 0.25s ease both; }
+.hero-animate-3 { animation: fadeInUp 0.8s 0.4s ease both; }
+.hero-animate-4 { animation: fadeInUp 0.8s 0.55s ease both; }
+
+/* ── Glow sur éléments ── */
+.glow { animation: glowPulse 3s ease-in-out infinite; }
+.float-anim { animation: float 4s ease-in-out infinite; }
+
+/* ── Curseur clignotant ── */
+.cursor-blink::after {
+  content: '|'; color: var(--purple-bright);
+  animation: blink 1s step-end infinite; margin-left: 2px;
+}
+
+/* ── Barre dégradé animée ── */
+.gradient-animated {
+  background: linear-gradient(270deg, var(--purple-main), var(--purple-bright), #818cf8, var(--purple-main));
+  background-size: 300% 300%;
+  animation: gradientShift 5s ease infinite;
+  -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* ── Particles canvas ── */
+#particles-canvas {
+  position: fixed; inset: 0; z-index: 0; pointer-events: none; opacity: 0.4;
+}
+
+/* ── Scanline effect sur images de hero ── */
+.scanline-img { position: relative; overflow: hidden; }
+.scanline-img::after {
+  content: '';
+  position: absolute; left: 0; right: 0;
+  height: 40%; background: linear-gradient(transparent, rgba(124,58,237,0.08), transparent);
+  animation: scanline 4s linear infinite;
+}
+
+/* ── Hover glow card ── */
+.glow-card:hover { box-shadow: 0 0 40px rgba(168,85,247,0.2), 0 4px 30px rgba(0,0,0,0.5); }
+
+/* ── Underline gradient ── */
+.underline-gradient {
+  position: relative; display: inline-block;
+}
+.underline-gradient::after {
+  content: ''; position: absolute;
+  left: 0; bottom: -3px; width: 100%; height: 2px;
+  background: linear-gradient(90deg, var(--purple-main), var(--purple-bright));
+  transform: scaleX(0); transform-origin: right;
+  transition: transform 0.3s ease;
+}
+.underline-gradient:hover::after { transform: scaleX(1); transform-origin: left; }
+
+/* ── Loading line ── */
+.page-loader {
+  position: fixed; top: 0; left: 0; right: 0; z-index: 9999;
+  height: 3px;
+  background: linear-gradient(90deg, var(--purple-main), var(--purple-bright));
+  transform-origin: left;
+  animation: none;
+}

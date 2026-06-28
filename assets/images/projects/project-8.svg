@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="450" viewBox="0 0 800 450">
+  <rect width="800" height="450" fill="#1a1025"/>
+  <rect x="1" y="1" width="798" height="448" fill="none" stroke="#7c3aed" stroke-width="2" stroke-dasharray="10,5"/>
+  <text x="400" y="210" text-anchor="middle" fill="#7c3aed" font-family="monospace" font-size="48">📷</text>
+  <text x="400" y="255" text-anchor="middle" fill="#a855f7" font-family="monospace" font-size="18">Ajouter une image ici</text>
+  <text x="400" y="280" text-anchor="middle" fill="#6b7280" font-family="monospace" font-size="13">Remplacer ce fichier par votre image</text>
+</svg>

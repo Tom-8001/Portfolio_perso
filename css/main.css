@@ -1,0 +1,172 @@
+/* ============================================================
+   main.css — Variables, reset, typographie, layout global
+   Projet : Portfolio Tom Muller
+   ============================================================ */
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;700&display=swap');
+
+/* ── Variables ── */
+:root {
+  --bg-primary:    #08080e;
+  --bg-secondary:  #0f0f1a;
+  --bg-card:       #13131f;
+  --bg-card-hover: #1a1a2e;
+
+  --purple-deep:   #4c1d95;
+  --purple-main:   #7c3aed;
+  --purple-bright: #a855f7;
+  --purple-light:  #c084fc;
+  --purple-glow:   rgba(168, 85, 247, 0.15);
+  --purple-glow-strong: rgba(168, 85, 247, 0.35);
+
+  --text-primary:  #f1f5f9;
+  --text-secondary:#b8bfd0;
+  --text-muted:    #64748b;
+  --text-accent:   #c084fc;
+
+  --border:        rgba(124, 58, 237, 0.25);
+  --border-hover:  rgba(168, 85, 247, 0.6);
+
+  --font-main: 'Inter', system-ui, sans-serif;
+  --font-mono: 'JetBrains Mono', 'Fira Code', monospace;
+
+  --radius-sm: 6px;
+  --radius-md: 12px;
+  --radius-lg: 20px;
+  --radius-xl: 28px;
+
+  --transition: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  --shadow-card: 0 4px 24px rgba(0,0,0,0.4), 0 0 0 1px var(--border);
+  --shadow-glow: 0 0 30px var(--purple-glow), 0 0 60px rgba(168,85,247,0.08);
+}
+
+/* ── Reset ── */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; font-size: 16px; }
+body {
+  background: var(--bg-primary);
+  color: var(--text-primary);
+  font-family: var(--font-main);
+  line-height: 1.7;
+  overflow-x: hidden;
+  min-height: 100vh;
+}
+a { color: var(--purple-light); text-decoration: none; transition: color var(--transition); }
+a:hover { color: #fff; }
+img { max-width: 100%; display: block; }
+ul, ol { list-style: none; }
+button { cursor: pointer; font-family: var(--font-main); border: none; background: none; }
+input, textarea { font-family: var(--font-main); }
+
+/* ── Scrollbar ── */
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: var(--bg-secondary); }
+::-webkit-scrollbar-thumb { background: var(--purple-main); border-radius: 3px; }
+
+/* ── Selection ── */
+::selection { background: var(--purple-glow-strong); color: #fff; }
+
+/* ── Background grid ── */
+body::before {
+  content: '';
+  position: fixed; inset: 0; z-index: 0; pointer-events: none;
+  background-image:
+    linear-gradient(rgba(124,58,237,0.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(124,58,237,0.04) 1px, transparent 1px);
+  background-size: 60px 60px;
+}
+
+/* ── Orbs de fond ── */
+.bg-orb {
+  position: fixed; border-radius: 50%; pointer-events: none; z-index: 0;
+  filter: blur(80px); opacity: 0.18;
+}
+.bg-orb-1 {
+  width: 500px; height: 500px;
+  background: radial-gradient(circle, var(--purple-main), transparent);
+  top: -150px; right: -100px;
+}
+.bg-orb-2 {
+  width: 400px; height: 400px;
+  background: radial-gradient(circle, var(--purple-deep), transparent);
+  bottom: 10%; left: -150px;
+}
+
+/* ── Layout conteneur ── */
+.container {
+  width: 100%; max-width: 1200px;
+  margin: 0 auto; padding: 0 24px;
+  position: relative; z-index: 1;
+}
+.section { padding: 100px 0; }
+.section-sm { padding: 60px 0; }
+
+/* ── Titres de section ── */
+.section-label {
+  font-family: var(--font-mono);
+  font-size: 0.8rem; font-weight: 500;
+  color: var(--purple-bright); letter-spacing: 0.15em; text-transform: uppercase;
+  display: flex; align-items: center; gap: 10px; margin-bottom: 12px;
+}
+.section-label::before {
+  content: '//'; color: var(--purple-main); font-weight: 700;
+}
+.section-title {
+  font-size: clamp(2rem, 4vw, 3rem); font-weight: 800;
+  line-height: 1.2; margin-bottom: 16px;
+  background: linear-gradient(135deg, #fff 0%, var(--purple-light) 100%);
+  -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+.section-subtitle {
+  font-size: 1.1rem; color: var(--text-secondary); max-width: 560px;
+}
+
+/* ── Badges / Tags ── */
+.tag {
+  display: inline-flex; align-items: center; gap: 5px;
+  padding: 4px 12px; border-radius: 99px;
+  font-size: 0.75rem; font-weight: 500; font-family: var(--font-mono);
+  background: rgba(124,58,237,0.15); color: var(--purple-light);
+  border: 1px solid rgba(124,58,237,0.3);
+  transition: var(--transition);
+}
+.tag:hover { background: rgba(124,58,237,0.25); border-color: var(--purple-bright); }
+.tag-green  { background: rgba(16,185,129,0.12); color: #6ee7b7; border-color: rgba(16,185,129,0.25); }
+.tag-blue   { background: rgba(59,130,246,0.12); color: #93c5fd; border-color: rgba(59,130,246,0.25); }
+.tag-orange { background: rgba(245,158,11,0.12); color: #fcd34d; border-color: rgba(245,158,11,0.25); }
+.tag-red    { background: rgba(239,68,68,0.12);  color: #fca5a5; border-color: rgba(239,68,68,0.25); }
+
+/* ── Divider ── */
+.divider {
+  width: 60px; height: 3px; border-radius: 2px;
+  background: linear-gradient(90deg, var(--purple-main), var(--purple-bright));
+  margin: 20px 0 40px;
+}
+
+/* ── Image placeholder ── */
+.img-placeholder {
+  background: var(--bg-card);
+  border: 2px dashed var(--border);
+  border-radius: var(--radius-md);
+  display: flex; flex-direction: column;
+  align-items: center; justify-content: center;
+  gap: 8px; color: var(--text-muted);
+  font-family: var(--font-mono); font-size: 0.85rem;
+  transition: var(--transition);
+}
+.img-placeholder:hover {
+  border-color: var(--purple-bright);
+  color: var(--purple-light);
+  background: var(--bg-card-hover);
+}
+.img-placeholder .icon { font-size: 2.5rem; }
+
+/* ── Responsive ── */
+@media (max-width: 768px) {
+  .container { padding: 0 16px; }
+  .section { padding: 70px 0; }
+}
+@media (max-width: 480px) {
+  .section { padding: 50px 0; }
+}

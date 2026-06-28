@@ -1,0 +1,342 @@
+/* ============================================================
+   projects.js — Données centralisées de tous les projets
+   Pour ajouter un projet : copier un objet et modifier les valeurs.
+   Les images vont dans assets/images/projects/project-N.svg (ou .png/.jpg)
+   ============================================================ */
+
+const PROJECTS = [
+  {
+    id: 1,
+    slug: "eqd2-bed-raystation",
+    title: "Script EQD2/BED RayStation",
+    category: "Médical & Python",
+    categoryKey: "medical",
+    status: "active",   // active | done | wip
+    statusLabel: "En cours",
+    year: "2026",
+    context: "Stage SWING-WS",
+    image: "assets/images/projects/project-1.svg",
+    shortDesc: "Script Python intégré à RayStation pour automatiser le calcul de dose biologique EQD2 et BED voxel par voxel en radiothérapie.",
+    fullDesc: `Ce projet est le cœur de mon stage en physique médicale. L'objectif est d'automatiser un calcul radiobiologique complexe directement depuis RayStation, en récupérant les organes, les paramètres alpha/bêta, en gérant les cas particuliers, et en produisant des cartes de dose exploitables cliniquement.`,
+    features: [
+      "Récupération dynamique des ROIs depuis RayStation",
+      "Association automatique des ratios alpha/bêta par tissu",
+      "Calcul voxel par voxel de l'EQD2 et du BED",
+      "Export et import DICOM dans le workflow RayStation",
+      "Interface de saisie manuelle pour les organes non reconnus",
+      "Génération de logs détaillés et rapports Markdown"
+    ],
+    tags: ["Python", "RayStation", "DICOM", "Radiothérapie", "EQD2", "BED", "Physique médicale"],
+    tagsColor: { "Python": "blue", "DICOM": "green", "Radiothérapie": "red" },
+    links: { github: "", demo: "" }
+  },
+  {
+    id: 2,
+    slug: "ia-influenceur-luna",
+    title: "IA Influenceur — Luna",
+    category: "IA Générative",
+    categoryKey: "ia",
+    status: "wip",
+    statusLabel: "En développement",
+    year: "2026",
+    context: "Projet personnel",
+    image: "assets/images/projects/project-2.svg",
+    shortDesc: "Application Python CLI modulaire pour générer du contenu visuel cohérent autour d'un personnage fictif ultra-réaliste destiné aux réseaux sociaux.",
+    fullDesc: `Pipeline complet combinant LLM local, ComfyUI et APIs vidéo pour créer des images, captions et vidéos courtes mettant en scène Luna, un personnage fictif en style dark/gothic. Le projet vise une automatisation poussée du processus de création de contenu.`,
+    features: [
+      "Génération de prompts via Ollama (qwen3.5:9b)",
+      "Génération d'images FLUX.2 Klein 9B via ComfyUI",
+      "Cohérence faciale via ReActor + CodeFormer",
+      "Workflow ComfyUI actif : Luna_V4a_ReActor",
+      "Génération automatique de captions, hashtags, bios",
+      "Phase 2 prévue : vidéo via WAN 2.2 et fal.ai/Kling 3.0"
+    ],
+    tags: ["Python", "ComfyUI", "FLUX.2", "Ollama", "IA Générative", "fal.ai", "LoRA"],
+    tagsColor: { "Python": "blue", "ComfyUI": "purple", "LoRA": "orange" },
+    links: { github: "", demo: "" }
+  },
+  {
+    id: 3,
+    slug: "generateur-shorts-youtube",
+    title: "Générateur de Shorts YouTube",
+    category: "Automatisation",
+    categoryKey: "automatisation",
+    status: "done",
+    statusLabel: "Terminé",
+    year: "2026",
+    context: "Projet personnel",
+    image: "assets/images/projects/project-3.svg",
+    shortDesc: "Pipeline Python automatisant la transformation d'une vidéo YouTube en shorts optimisés pour les réseaux sociaux.",
+    fullDesc: `Ce script Python télécharge une vidéo YouTube, la transcrit avec Whisper, en extrait les segments les plus pertinents, ajoute des sous-titres type karaoké et un POV accrocheur, puis exporte des clips courts prêts à publier.`,
+    features: [
+      "Téléchargement via yt-dlp",
+      "Transcription Whisper large-v2 avec timestamps mot par mot",
+      "Regroupement intelligent des segments par fins de phrases",
+      "Génération d'un POV global accrocheur",
+      "Brûlage de sous-titres karaoké (portrait/paysage)",
+      "Nettoyage automatique des fichiers temporaires"
+    ],
+    tags: ["Python", "Whisper", "yt-dlp", "OpenCV", "PIL", "FFmpeg", "Automatisation"],
+    tagsColor: { "Python": "blue", "Whisper": "green", "FFmpeg": "orange" },
+    links: { github: "", demo: "" }
+  },
+  {
+    id: 4,
+    slug: "bot-trading-ia",
+    title: "Bot de Trading Crypto + IA",
+    category: "IA & Finance",
+    categoryKey: "ia",
+    status: "done",
+    statusLabel: "Terminé",
+    year: "2026",
+    context: "Projet personnel",
+    image: "assets/images/projects/project-4.svg",
+    shortDesc: "Bot algorithmique crypto combinant analyse quantitative (EMA/RSI) et analyse d'actualité par LLM local (Ollama/Gemma) sur Binance Testnet.",
+    fullDesc: `Architecture à double cerveau : un moteur quantitatif basé sur EMA 10/21, RSI et trailing stop, et un moteur cognitif qui scanne Yahoo Finance toutes les 5 minutes pour en extraire un verdict de sentiment via Gemma en local. Le bot inclut un backtest sur 5 ans.`,
+    features: [
+      "Double cerveau : quantitatif + IA locale (Ollama/Gemma)",
+      "Scan Yahoo Finance toutes les 5 minutes",
+      "Verdict IA : STRONG_BUY → STRONG_SELL",
+      "Filtre anti-bull trap par sentiment IA",
+      "Trailing stop dynamique et allocation 70/30",
+      "Backtest 5 ans : +138% BTC, +135% ETH vs Buy&Hold"
+    ],
+    tags: ["Python", "Ollama", "Gemma", "Binance", "Trading", "Backtesting", "yfinance"],
+    tagsColor: { "Python": "blue", "Ollama": "green", "Trading": "orange" },
+    links: { github: "", demo: "" }
+  },
+  {
+    id: 5,
+    slug: "game-hub-webl3game",
+    title: "Game Hub — WebL3Game",
+    category: "Web & Jeux",
+    categoryKey: "jeu",
+    status: "done",
+    statusLabel: "Terminé",
+    year: "2026",
+    context: "Projet académique L3",
+    image: "assets/images/projects/project-5.svg",
+    shortDesc: "Hub web centralisant trois jeux reliés entre eux avec authentification, scores communs, bonus croisés et déploiement sur Render.",
+    fullDesc: `Landing page commune reliant Idle Defense, Tower Defense Procédural et Dungeon Ascension avec une API Express, une base MongoDB, des scores persistés et un système de bonus cross-game. Contribution personnelle de 85% du projet global.`,
+    features: [
+      "Landing page hub avec navigation commune",
+      "Authentification utilisateur (register / login)",
+      "Scores centralisés MongoDB pour les 3 jeux",
+      "Bonus cross-game entre jeux",
+      "Déploiement Render (migration depuis Vercel)",
+      "Architecture Express + Mongoose propre"
+    ],
+    tags: ["Node.js", "Express", "MongoDB", "JavaScript", "HTML/CSS", "Render"],
+    tagsColor: { "Node.js": "green", "MongoDB": "green", "Express": "blue" },
+    links: { github: "", demo: "" }
+  },
+  {
+    id: 6,
+    slug: "dungeon-ascension",
+    title: "Dungeon Ascension",
+    category: "Web & Jeux",
+    categoryKey: "jeu",
+    status: "done",
+    statusLabel: "Terminé",
+    year: "2026",
+    context: "Projet académique L3",
+    image: "assets/images/projects/project-6.svg",
+    shortDesc: "Roguelike 3D en navigateur avec génération procédurale de donjons, combat mêlée/distance, loot aléatoire et progression par étages. Babylon.js.",
+    fullDesc: `Jeu de donjon 3D jouable dans le navigateur avec génération procédurale BSP, ennemis variés, système d'armes avec effets magiques, progression XP et réglages graphiques en temps réel. Pipeline 3D prévu pour les assets GLB/GLTF.`,
+    features: [
+      "Génération procédurale du donjon (BSP + corridors)",
+      "6 types d'ennemis incluant 3 boss",
+      "Combat mêlée et distance avec cooldown",
+      "Loot aléatoire par étage + effets feu/poison",
+      "Réglages graphiques Bas/Moyen/Élevé en temps réel",
+      "Pipeline 3D GLB avec fallback procédural"
+    ],
+    tags: ["Babylon.js", "JavaScript", "HTML/CSS", "Node.js", "Génération procédurale"],
+    tagsColor: { "Babylon.js": "orange", "JavaScript": "blue" },
+    links: { github: "", demo: "" }
+  },
+  {
+    id: 7,
+    slug: "tower-defense-procedural",
+    title: "Tower Defense Procédural",
+    category: "Web & Jeux",
+    categoryKey: "jeu",
+    status: "done",
+    statusLabel: "Terminé",
+    year: "2026",
+    context: "Projet académique L3",
+    image: "assets/images/projects/project-7.svg",
+    shortDesc: "Tower defense dark fantasy pixel art avec carte générée procéduralement, 6 tours complémentaires, 13 ennemis et pathfinding A*.",
+    fullDesc: `Tower defense orienté mazing avec génération procédurale de la carte, 6 tours aux rôles distincts et 13 types d'ennemis aux capacités spéciales variées. Le rendu est entièrement en DOM/CSS sans canvas, avec un A* pour la navigation et la validation des placements.`,
+    features: [
+      "Carte générée procéduralement à chaque partie",
+      "6 tours : Gatling, Mortier, Mur Épineux, Cryo, Bastion, Prisme",
+      "13 ennemis avec capacités (Fantôme, Titan, Portail, Boss…)",
+      "Pathfinding A* pour ennemis et validation placement",
+      "Difficulté adaptative selon le DPS du joueur",
+      "Rendu entièrement DOM + CSS"
+    ],
+    tags: ["JavaScript", "HTML/CSS", "A*", "Génération procédurale", "DOM"],
+    tagsColor: { "JavaScript": "blue", "A*": "orange" },
+    links: { github: "", demo: "" }
+  },
+  {
+    id: 8,
+    slug: "idle-defense",
+    title: "Idle Defense",
+    category: "Web & Jeux",
+    categoryKey: "jeu",
+    status: "done",
+    statusLabel: "Terminé",
+    year: "2026",
+    context: "Projet académique L3",
+    image: "assets/images/projects/project-8.svg",
+    shortDesc: "Tower defense arcade HTML5 Canvas. Défense d'une tour centrale contre des vagues infinies avec 5 axes d'amélioration et missiles AoE.",
+    fullDesc: `Jeu arcade en Canvas 2D avec vagues d'ennemis infinies, système d'amélioration à 5 axes et missiles en salves. Le gameplay repose sur l'optimisation des achats d'améliorations avec scaling exponentiel des ennemis.`,
+    features: [
+      "Rendu Canvas 2D, architecture orientée classes",
+      "5 axes d'amélioration : dégâts, cadence, portée, vie, missiles",
+      "Missiles AoE en salves avec ciblage intelligent",
+      "Scaling quadratique des ennemis par vague",
+      "Score persisté vers le hub commun",
+      "Double-canon rotatif avec effets de particules"
+    ],
+    tags: ["JavaScript", "Canvas 2D", "HTML/CSS", "Vanilla JS"],
+    tagsColor: { "JavaScript": "blue", "Canvas 2D": "orange" },
+    links: { github: "", demo: "" }
+  },
+  {
+    id: 9,
+    slug: "seven-wonders-java",
+    title: "7 Wonders — Version Électronique",
+    category: "Java & IA",
+    categoryKey: "java",
+    status: "done",
+    statusLabel: "Terminé",
+    year: "2025",
+    context: "Projet académique S5",
+    image: "assets/images/projects/project-9.svg",
+    shortDesc: "Version électronique du jeu de société 7 Wonders jouée exclusivement par des robots IA, développée en Java avec architecture SOLID et Maven.",
+    fullDesc: `Simulation complète de parties de 7 Wonders en mode tout-robot. Le projet met l'accent sur l'architecture logicielle propre avec une structure SOLID, des robots aux comportements variés (aléatoire, stratégique) et plusieurs modes d'affichage configurables.`,
+    features: [
+      "Simulation complète 3+ joueurs tous robots",
+      "Plusieurs niveaux de stratégie IA",
+      "Interface textuelle avec modes couleur (NEON, PASTEL, NONE)",
+      "Architecture SOLID rigoureuse",
+      "Mode développement avec logs détaillés",
+      "Build Maven avec profils configurables"
+    ],
+    tags: ["Java", "Maven", "IA de jeu", "SOLID", "Architecture logicielle"],
+    tagsColor: { "Java": "orange", "Maven": "red", "SOLID": "blue" },
+    links: { github: "", demo: "" }
+  },
+  {
+    id: 10,
+    slug: "comfyui-trellis2-3d",
+    title: "ComfyUI + Trellis2 — Génération 3D",
+    category: "IA Générative",
+    categoryKey: "ia",
+    status: "wip",
+    statusLabel: "En développement",
+    year: "2026",
+    context: "Projet personnel",
+    image: "assets/images/projects/project-10.svg",
+    shortDesc: "Setup local ComfyUI avec Trellis2 pour générer des modèles 3D exploitables directement depuis une image de référence.",
+    fullDesc: `Configuration d'un pipeline local de génération 3D combinant ComfyUI et le modèle Trellis2 pour transformer une image en asset 3D. Ce projet s'inscrit dans la continuité des intérêts pour la 3D, la génération IA et la création de contenu visuel.`,
+    features: [
+      "Pipeline image → modèle 3D en local",
+      "Intégration via nœuds ComfyUI",
+      "Aucune dépendance cloud",
+      "Optimisé pour GPU RTX (5070 Ti / 4070 Super)",
+      "Assets exploitables pour jeux et visualisation 3D"
+    ],
+    tags: ["ComfyUI", "Trellis2", "3D", "Python", "IA Générative", "GPU"],
+    tagsColor: { "ComfyUI": "purple", "3D": "orange", "GPU": "green" },
+    links: { github: "", demo: "" }
+  },
+  {
+    id: 11,
+    slug: "multi-agents-ia",
+    title: "Système Multi-Agents IA",
+    category: "IA & Architecture",
+    categoryKey: "ia",
+    status: "wip",
+    statusLabel: "En développement",
+    year: "2026",
+    context: "Projet R&D personnel",
+    image: "assets/images/projects/project-11.svg",
+    shortDesc: "Architecture multi-agents IA locale (manager, planner, coder, vérificateur) pour automatiser le développement et les workflows techniques.",
+    fullDesc: `Exploration et mise en place d'un système d'agents IA locaux capables de collaborer sur un même projet. Utilise CrewAI, LM Studio, Ollama et l'extension Continue dans VS Code. L'objectif est d'avoir 4-5 agents spécialisés qui communiquent entre eux pour produire du code, valider des résultats ou orchestrer des pipelines.`,
+    features: [
+      "Architecture 4-5 agents : manager, planner, coder, tester",
+      "Modèles locaux : Gemma 4 27B, Qwen Coder, DeepSeek",
+      "Intégration LM Studio + Ollama",
+      "CrewAI pour l'orchestration inter-agents",
+      "Extension Continue dans VS Code",
+      "MCP servers pour GitHub, filesystem, web"
+    ],
+    tags: ["CrewAI", "Ollama", "LM Studio", "Python", "Agents IA", "VS Code"],
+    tagsColor: { "CrewAI": "purple", "Python": "blue", "Agents IA": "green" },
+    links: { github: "", demo: "" }
+  },
+  {
+    id: 12,
+    slug: "dungeon-roguelike-babylonjs",
+    title: "Dungeon Roguelike — Prototype",
+    category: "Web & Jeux",
+    categoryKey: "jeu",
+    status: "done",
+    statusLabel: "Terminé",
+    year: "2026",
+    context: "Projet académique",
+    image: "assets/images/projects/project-12.svg",
+    shortDesc: "Prototype de donjon roguelike en Babylon.js avec ennemis (gobelins), barres de vie, textures et système de récompenses avec armes switchables.",
+    fullDesc: `Phase de prototype précédant Dungeon Ascension. Architecture des ennemis/comportements avec gobelins, barres de vie, textures procédurales, système d'attaque du joueur et récompenses par salle (coffres, armes).`,
+    features: [
+      "Ennemis gobelins avec barres de vie dynamiques",
+      "Attaques joueur + kill enemies",
+      "Coffres de récompenses par salle",
+      "Armes switchables : épée et arc",
+      "Drops de flèches ennemis et coffres",
+      "Génération de salles procédurales"
+    ],
+    tags: ["Babylon.js", "JavaScript", "Roguelike", "3D", "HTML/CSS"],
+    tagsColor: { "Babylon.js": "orange", "Roguelike": "red" },
+    links: { github: "", demo: "" }
+  },
+  {
+    id: 13,
+    slug: "videos-courtes-ia-pipeline",
+    title: "Pipeline Vidéos Courtes IA",
+    category: "IA Générative",
+    categoryKey: "ia",
+    status: "wip",
+    statusLabel: "En développement",
+    year: "2026",
+    context: "Projet personnel",
+    image: "assets/images/projects/project-13.svg",
+    shortDesc: "Pipeline Python complet pour générer des vidéos courtes mettant en scène un personnage IA cohérent, via génération locale et API vidéo.",
+    fullDesc: `Extension du projet Luna vers la production vidéo. Le pipeline chaine génération d'images, animation via WAN 2.2 ou Kling 3.0 (fal.ai), assemblage FFmpeg et préparation au format social media. Choix entre génération locale ou API selon les ressources disponibles.`,
+    features: [
+      "Génération vidéo locale via WAN 2.2 + ComfyUI",
+      "Génération vidéo API via fal.ai / Kling 3.0",
+      "Cohérence personnage via Character ID ou LoRA",
+      "Assemblage et crossfade avec FFmpeg",
+      "Mode CLI avec switch local/API",
+      "Déclaration AI Generated automatique"
+    ],
+    tags: ["Python", "ComfyUI", "WAN 2.2", "fal.ai", "Kling 3.0", "FFmpeg", "IA Vidéo"],
+    tagsColor: { "Python": "blue", "fal.ai": "purple", "FFmpeg": "orange" },
+    links: { github: "", demo: "" }
+  }
+];
+
+// ── Catégories pour les filtres ──
+const CATEGORIES = [
+  { key: "all",           label: "Tous les projets" },
+  { key: "ia",            label: "IA & Machine Learning" },
+  { key: "jeu",           label: "Jeux & 3D" },
+  { key: "automatisation",label: "Automatisation" },
+  { key: "medical",       label: "Médical" },
+  { key: "java",          label: "Java" }
+];
