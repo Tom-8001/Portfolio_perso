@@ -154,13 +154,18 @@ if (!p) {
   `;
 
   const lc = document.getElementById('linksContainer');
+  const sl = document.getElementById('sidebarLinks');
+  let linksHtml = '';
   if (p.links.github) {
-    lc.innerHTML += '<a href="' + p.links.github + '" target="_blank" rel="noopener" class="btn btn-ghost btn-sm" style="justify-content:center;">GitHub →</a>';
-  } else {
-    lc.innerHTML += '<span style="color:var(--text-muted);font-size:0.85rem;">Lien GitHub à ajouter</span>';
+    linksHtml += '<a href="' + p.links.github + '" target="_blank" rel="noopener" class="btn btn-ghost btn-sm" style="justify-content:center;">GitHub →</a>';
   }
   if (p.links.demo) {
-    lc.innerHTML += '<a href="' + p.links.demo + '" target="_blank" rel="noopener" class="btn btn-outline btn-sm" style="justify-content:center;">Démo live →</a>';
+    linksHtml += '<a href="' + p.links.demo + '" target="_blank" rel="noopener" class="btn btn-outline btn-sm" style="justify-content:center;">Démo live →</a>';
+  }
+  if (linksHtml) {
+    lc.innerHTML = linksHtml;
+  } else {
+    sl.style.display = 'none';
   }
 
   const idx = PROJECTS.findIndex(x => x.id === id);
