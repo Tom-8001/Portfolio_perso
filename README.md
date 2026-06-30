@@ -69,7 +69,7 @@ portfolio/
 Remplacer les fichiers `.svg` placeholder par des images réelles :
 - `assets/images/hero/placeholder.svg` → votre photo de profil (format carré recommandé)
 - `assets/images/about/placeholder.svg` → votre photo / bannière (format 3:4 recommandé)
-- `assets/images/projects/project-N.svg` → capture d'écran ou visuel de chaque projet
+| `assets/images/projects/project-N.png` → capture d'écran ou visuel de chaque projet
 
 ### 2. Mettre à jour vos liens
 Rechercher et remplacer dans **tous les fichiers HTML** :
@@ -161,4 +161,4 @@ Chrome 90+, Firefox 90+, Edge 90+, Safari 14+. Aucun polyfill requis.
 
 ## Auteur
 
-Tom Muller — Étudiant L3 MIAGE — Paris 2026
+Tom Muller — Étudiant L3 MIAGE — Nice/Carros 2026

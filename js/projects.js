@@ -1,7 +1,7 @@
 /* ============================================================
    projects.js — Données centralisées de tous les projets
    Pour ajouter un projet : copier un objet et modifier les valeurs.
-   Les images vont dans assets/images/projects/project-N.svg (ou .png/.jpg)
+   //   Les images vont dans assets/images/projects/project-N.png
    ============================================================ */
 
 const PROJECTS = [
@@ -14,8 +14,8 @@ const PROJECTS = [
     status: "active",   // active | done | wip
     statusLabel: "En cours",
     year: "2026",
-    context: "Stage SWING-WS",
-    image: "assets/images/projects/project-1.svg",
+    context: "Stage — Centre La Cassagne",
+    image: "assets/images/projects/project-1.png",
     shortDesc: "Script Python intégré à RayStation pour automatiser le calcul de dose biologique EQD2 et BED voxel par voxel en radiothérapie.",
     fullDesc: `Ce projet est le cœur de mon stage en physique médicale. L'objectif est d'automatiser un calcul radiobiologique complexe directement depuis RayStation, en récupérant les organes, les paramètres alpha/bêta, en gérant les cas particuliers, et en produisant des cartes de dose exploitables cliniquement.`,
     features: [
@@ -39,7 +39,7 @@ const PROJECTS = [
     statusLabel: "En développement",
     year: "2026",
     context: "Projet personnel",
-    image: "assets/images/projects/project-2.svg",
+    image: "assets/images/projects/project-2.png",
     shortDesc: "Application Python CLI modulaire pour générer du contenu visuel cohérent autour d'un personnage fictif ultra-réaliste destiné aux réseaux sociaux.",
     fullDesc: `Pipeline complet combinant LLM local, ComfyUI et APIs vidéo pour créer des images, captions et vidéos courtes mettant en scène Luna, un personnage fictif en style dark/gothic. Le projet vise une automatisation poussée du processus de création de contenu.`,
     features: [
@@ -63,7 +63,7 @@ const PROJECTS = [
     statusLabel: "Terminé",
     year: "2026",
     context: "Projet personnel",
-    image: "assets/images/projects/project-3.svg",
+    image: "assets/images/projects/project-3.png",
     shortDesc: "Pipeline Python automatisant la transformation d'une vidéo YouTube en shorts optimisés pour les réseaux sociaux.",
     fullDesc: `Ce script Python télécharge une vidéo YouTube, la transcrit avec Whisper, en extrait les segments les plus pertinents, ajoute des sous-titres type karaoké et un POV accrocheur, puis exporte des clips courts prêts à publier.`,
     features: [
@@ -87,7 +87,7 @@ const PROJECTS = [
     statusLabel: "Terminé",
     year: "2026",
     context: "Projet personnel",
-    image: "assets/images/projects/project-4.svg",
+    image: "assets/images/projects/project-4.png",
     shortDesc: "Bot algorithmique crypto combinant analyse quantitative (EMA/RSI) et analyse d'actualité par LLM local (Ollama/Gemma) sur Binance Testnet.",
     fullDesc: `Architecture à double cerveau : un moteur quantitatif basé sur EMA 10/21, RSI et trailing stop, et un moteur cognitif qui scanne Yahoo Finance toutes les 5 minutes pour en extraire un verdict de sentiment via Gemma en local. Le bot inclut un backtest sur 5 ans.`,
     features: [
@@ -111,7 +111,8 @@ const PROJECTS = [
     statusLabel: "Terminé",
     year: "2026",
     context: "Projet académique L3",
-    image: "assets/images/projects/project-5.svg",
+    links: { demo: "https://webl3game.onrender.com/" },
+    image: "assets/images/projects/project-5.png",
     shortDesc: "Hub web centralisant trois jeux reliés entre eux avec authentification, scores communs, bonus croisés et déploiement sur Render.",
     fullDesc: `Landing page commune reliant Idle Defense, Tower Defense Procédural et Dungeon Ascension avec une API Express, une base MongoDB, des scores persistés et un système de bonus cross-game. Contribution personnelle de 85% du projet global.`,
     features: [
@@ -135,14 +136,16 @@ const PROJECTS = [
     statusLabel: "Terminé",
     year: "2026",
     context: "Projet académique L3",
-    image: "assets/images/projects/project-6.svg",
+    links: { demo: "https://webl3game.onrender.com/" },
+    image: "assets/images/projects/project-6.png",
     shortDesc: "Roguelike 3D en navigateur avec génération procédurale de donjons, combat mêlée/distance, loot aléatoire et progression par étages. Babylon.js.",
-    fullDesc: `Jeu de donjon 3D jouable dans le navigateur avec génération procédurale BSP, ennemis variés, système d'armes avec effets magiques, progression XP et réglages graphiques en temps réel. Pipeline 3D prévu pour les assets GLB/GLTF.`,
+    fullDesc: `Jeu de donjon 3D jouable dans le navigateur avec génération procédurale BSP, ennemis variés, système d'armes avec effets magiques, progression XP et réglages graphiques en temps réel. Issu d'un prototype ayant permis de valider les ennemis gobelins, coffres, barres de vie et armes switchables (épée/arc). Pipeline 3D prévu pour les assets GLB/GLTF.`,
     features: [
       "Génération procédurale du donjon (BSP + corridors)",
       "6 types d'ennemis incluant 3 boss",
       "Combat mêlée et distance avec cooldown",
-      "Loot aléatoire par étage + effets feu/poison",
+      "Armes switchables : épée et arc",
+      "Loot aléatoire par étage + coffres de récompenses",
       "Réglages graphiques Bas/Moyen/Élevé en temps réel",
       "Pipeline 3D GLB avec fallback procédural"
     ],
@@ -159,7 +162,8 @@ const PROJECTS = [
     statusLabel: "Terminé",
     year: "2026",
     context: "Projet académique L3",
-    image: "assets/images/projects/project-7.svg",
+    links: { demo: "https://webl3game.onrender.com/" },
+    image: "assets/images/projects/project-7.png",
     shortDesc: "Tower defense dark fantasy pixel art avec carte générée procéduralement, 6 tours complémentaires, 13 ennemis et pathfinding A*.",
     fullDesc: `Tower defense orienté mazing avec génération procédurale de la carte, 6 tours aux rôles distincts et 13 types d'ennemis aux capacités spéciales variées. Le rendu est entièrement en DOM/CSS sans canvas, avec un A* pour la navigation et la validation des placements.`,
     features: [
@@ -183,7 +187,8 @@ const PROJECTS = [
     statusLabel: "Terminé",
     year: "2026",
     context: "Projet académique L3",
-    image: "assets/images/projects/project-8.svg",
+    links: { demo: "https://webl3game.onrender.com/" },
+    image: "assets/images/projects/project-8.png",
     shortDesc: "Tower defense arcade HTML5 Canvas. Défense d'une tour centrale contre des vagues infinies avec 5 axes d'amélioration et missiles AoE.",
     fullDesc: `Jeu arcade en Canvas 2D avec vagues d'ennemis infinies, système d'amélioration à 5 axes et missiles en salves. Le gameplay repose sur l'optimisation des achats d'améliorations avec scaling exponentiel des ennemis.`,
     features: [
@@ -207,7 +212,7 @@ const PROJECTS = [
     statusLabel: "Terminé",
     year: "2025",
     context: "Projet académique S5",
-    image: "assets/images/projects/project-9.svg",
+    image: "assets/images/projects/project-9.png",
     shortDesc: "Version électronique du jeu de société 7 Wonders jouée exclusivement par des robots IA, développée en Java avec architecture SOLID et Maven.",
     fullDesc: `Simulation complète de parties de 7 Wonders en mode tout-robot. Le projet met l'accent sur l'architecture logicielle propre avec une structure SOLID, des robots aux comportements variés (aléatoire, stratégique) et plusieurs modes d'affichage configurables.`,
     features: [
@@ -231,7 +236,7 @@ const PROJECTS = [
     statusLabel: "En développement",
     year: "2026",
     context: "Projet personnel",
-    image: "assets/images/projects/project-10.svg",
+    image: "assets/images/projects/project-10.png",
     shortDesc: "Setup local ComfyUI avec Trellis2 pour générer des modèles 3D exploitables directement depuis une image de référence.",
     fullDesc: `Configuration d'un pipeline local de génération 3D combinant ComfyUI et le modèle Trellis2 pour transformer une image en asset 3D. Ce projet s'inscrit dans la continuité des intérêts pour la 3D, la génération IA et la création de contenu visuel.`,
     features: [
@@ -254,7 +259,7 @@ const PROJECTS = [
     statusLabel: "En développement",
     year: "2026",
     context: "Projet R&D personnel",
-    image: "assets/images/projects/project-11.svg",
+    image: "assets/images/projects/project-11.png",
     shortDesc: "Architecture multi-agents IA locale (manager, planner, coder, vérificateur) pour automatiser le développement et les workflows techniques.",
     fullDesc: `Exploration et mise en place d'un système d'agents IA locaux capables de collaborer sur un même projet. Utilise CrewAI, LM Studio, Ollama et l'extension Continue dans VS Code. L'objectif est d'avoir 4-5 agents spécialisés qui communiquent entre eux pour produire du code, valider des résultats ou orchestrer des pipelines.`,
     features: [
@@ -270,27 +275,26 @@ const PROJECTS = [
   },
   {
     id: 12,
-    slug: "dungeon-roguelike-babylonjs",
-    title: "Dungeon Roguelike — Prototype",
-    category: "Web & Jeux",
-    categoryKey: "jeu",
+    slug: "stage-swing-ws-refactoring",
+    title: "Stage SWING-WS — Refactoring Anéchoïde",
+    category: "Embarqué & Python",
+    categoryKey: "automatisation",
     status: "done",
     statusLabel: "Terminé",
-    year: "2026",
-    context: "Projet académique",
-    image: "assets/images/projects/project-12.svg",
-    shortDesc: "Prototype de donjon roguelike en Babylon.js avec ennemis (gobelins), barres de vie, textures et système de récompenses avec armes switchables.",
-    fullDesc: `Phase de prototype précédant Dungeon Ascension. Architecture des ennemis/comportements avec gobelins, barres de vie, textures procédurales, système d'attaque du joueur et récompenses par salle (coffres, armes).`,
+    year: "2025",
+    context: "Stage BUT2 — SWING-WS",
+    image: "assets/images/projects/project-12.png",
+    shortDesc: "Refactoring complet et ajout de fonctionnalités sur une application de mesures/checks de sécurité pour puces de caméras embarquées en machine anéchoïde.",
+    fullDesc: `Stage de BUT2 Informatique chez SWING-WS (Carros). Refactoring complet de l'architecture et ajout de features sur un outil de validation matérielle permettant d'effectuer des mesures et des checks de sécurité sur des puces de cartes mères de caméras embarquées dans les machines anéchoïde.`,
     features: [
-      "Ennemis gobelins avec barres de vie dynamiques",
-      "Attaques joueur + kill enemies",
-      "Coffres de récompenses par salle",
-      "Armes switchables : épée et arc",
-      "Drops de flèches ennemis et coffres",
-      "Génération de salles procédurales"
+      "Refactoring de l'architecture applicative existante",
+      "Nouvelles fonctionnalités de mesure et contrôle",
+      "Checks de sécurité sur puces de cartes mères",
+      "Tests sur caméras embarquées machines anéchoïde",
+      "Mise à jour de la documentation technique"
     ],
-    tags: ["Babylon.js", "JavaScript", "Roguelike", "3D", "HTML/CSS"],
-    tagsColor: { "Babylon.js": "orange", "Roguelike": "red" },
+    tags: ["C#", "Embarqué", "Architecture logicielle", "Refactoring", "Hardware testing"],
+    tagsColor: { "C#": "blue", "Embarqué": "green", "Refactoring": "orange" },
   },
   {
     id: 13,
@@ -302,7 +306,7 @@ const PROJECTS = [
     statusLabel: "En développement",
     year: "2026",
     context: "Projet personnel",
-    image: "assets/images/projects/project-13.svg",
+    image: "assets/images/projects/project-13.png",
     shortDesc: "Pipeline Python complet pour générer des vidéos courtes mettant en scène un personnage IA cohérent, via génération locale et API vidéo.",
     fullDesc: `Extension du projet Luna vers la production vidéo. Le pipeline chaine génération d'images, animation via WAN 2.2 ou Kling 3.0 (fal.ai), assemblage FFmpeg et préparation au format social media. Choix entre génération locale ou API selon les ressources disponibles.`,
     features: [
