@@ -8,6 +8,7 @@
   <link rel="stylesheet" href="css/main.css"/>
   <link rel="stylesheet" href="css/components.css"/>
   <link rel="stylesheet" href="css/animations.css"/>
+  <link rel="stylesheet" href="css/responsive.css"/>
 </head>
 <body>
 <canvas id="particles-canvas"></canvas>
@@ -21,9 +22,7 @@
       <a href="index.html">Accueil</a>
 <a href="about.html">À propos</a>
 <a href="projects.html">Projets</a>
-<a href="contact.html" class="active">Contact</a>
-
-      <a href="contact.html" class="navbar-cta">Me contacter</a>
+<a href="contact.html" class="navbar-cta">Me contacter</a>
     </div>
     <button class="burger" id="burger" aria-label="Menu"><span></span><span></span><span></span></button>
   </div>
@@ -32,9 +31,7 @@
   <a href="index.html">Accueil</a>
 <a href="about.html">À propos</a>
 <a href="projects.html">Projets</a>
-<a href="contact.html">Contact</a>
-
-  <a href="contact.html" class="btn btn-primary btn-sm" style="text-align:center;display:block;">Me contacter</a>
+<a href="contact.html" class="btn btn-primary btn-sm" style="text-align:center;display:block;">Me contacter</a>
 </div>
 
 <section style="padding:140px 0 60px;">
@@ -97,7 +94,7 @@
       <!-- Formulaire Formspree -->
       <div class="reveal-right">
         <form action="https://formspree.io/f/meebkwvj" method="POST" id="contactForm">
-          <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;">
+          <div class="contact-name-grid" style="display:grid;grid-template-columns:1fr 1fr;gap:16px;">
             <div class="form-group">
               <label class="form-label" for="firstName">Prénom</label>
               <input class="form-control" type="text" id="firstName" name="firstName" placeholder="Jean" required/>

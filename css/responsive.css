@@ -1,0 +1,193 @@
+/* ============================================================
+   responsive.css — Tous les breakpoints responsives
+   Override des styles inline dans les pages HTML
+   ============================================================ */
+
+/* ── ≤ 1200px : petit desktop ── */
+@media (max-width: 1200px) {
+  .container { max-width: 960px; }
+}
+
+/* ── ≤ 1024px : tablettes paysage / petits écrans ── */
+@media (max-width: 1024px) {
+  .container { max-width: 100%; padding: 0 20px; }
+
+  /* Hero : rétrécir la photo */
+  /* Override inline width:360px / height:360px */
+  .hero-photo-wrap {
+    width: 280px !important;
+    height: 280px !important;
+  }
+
+  /* Badges flottants : les repositionner */
+  .hero-badge-right {
+    top: 0px !important;
+    right: 0px !important;
+  }
+  .hero-badge-left {
+    bottom: 20px !important;
+    left: -10px !important;
+  }
+}
+
+/* ── ≤ 900px : tablettes ── */
+@media (max-width: 900px) {
+  /* Hero grid → stack */
+  .hero-grid {
+    grid-template-columns: 1fr !important;
+    gap: 50px !important;
+    text-align: center;
+  }
+  .hero-grid h1 { text-align: center; }
+  .hero-grid .section-label { justify-content: center; }
+  .hero-grid p { max-width: 100% !important; margin-left: auto; margin-right: auto; }
+  .hero-grid > div:first-child .hero-animate-4 {
+    justify-content: center;
+  }
+  .hero-grid > div:first-child div:has(.social-btn) {
+    justify-content: center;
+  }
+
+  /* About page grid → stack */
+  .about-grid {
+    grid-template-columns: 1fr !important;
+    gap: 40px !important;
+    text-align: center;
+  }
+  .about-grid .section-label { justify-content: center; }
+
+  /* Contact name fields → stack */
+  .contact-name-grid {
+    grid-template-columns: 1fr !important;
+  }
+
+  /* Detail image → plus petite */
+  .detail-img-main { height: 220px !important; }
+
+  /* Nav detail buttons */
+  .nav-detail { flex-direction: column; align-items: stretch; }
+  .nav-detail-btn { max-width: 100% !important; }
+  .nav-detail-btn.next { margin-left: 0 !important; text-align: left !important; }
+}
+
+/* ── ≤ 768px : mobiles tablettes ── */
+@media (max-width: 768px) {
+  .section { padding: 60px 0 !important; }
+  .section-sm { padding: 40px 0 !important; }
+
+  /* Hero et sections avec padding inline */
+  section[style*="padding-top:140px"] { padding-top: 100px !important; }
+  section[style*="padding:140px 0"] { padding: 100px 0 40px !important; }
+
+  /* Hero photo */
+  .hero-photo-wrap {
+    width: 220px !important;
+    height: 220px !important;
+  }
+
+  /* Badges flottants : les cacher sur mobile, trop serrés */
+  .hero-badge-right,
+  .hero-badge-left {
+    display: none;
+  }
+
+  /* Titres section */
+  .section-title { font-size: 1.8rem !important; }
+
+  /* Stats : 2 colonnes */
+  .stats-row {
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 12px;
+  }
+  .stat-value { font-size: 2rem !important; }
+
+  /* Skills grid : 1 colonne */
+  .skills-grid { grid-template-columns: 1fr !important; }
+
+  /* Timeline */
+  .timeline::before { left: 16px !important; }
+  .timeline-item { gap: 16px !important; }
+  .timeline-dot { width: 34px !important; height: 34px !important; font-size: 0.9rem !important; }
+  .timeline-content { padding: 16px !important; }
+  .timeline-title { font-size: 0.9rem !important; }
+
+  /* Footer */
+  .footer-links { gap: 20px !important; flex-wrap: wrap; justify-content: center; }
+
+  /* Passions grid : 2 colonnes */
+  .reveal.delay-3[style*="grid-template-columns"] {
+    grid-template-columns: 1fr 1fr !important;
+    gap: 12px !important;
+  }
+
+  /* Skills bars */
+  .skill-item { padding: 14px 16px !important; }
+
+  /* Filter tabs */
+  .filter-tabs { gap: 8px; }
+  .filter-tab { padding: 6px 14px; font-size: 0.8rem; }
+}
+
+/* ── ≤ 480px : petits mobiles ── */
+@media (max-width: 480px) {
+  .section { padding: 40px 0 !important; }
+  [style*="padding-top:140px"] { padding-top: 80px !important; }
+  section[style*="padding:140px"] { padding: 80px 0 30px !important; }
+  [style*="padding:140px 0 60px"] { padding: 80px 0 30px !important; }
+
+  .container { padding: 0 14px !important; }
+
+  /* Hero photo : encore plus petite */
+  .hero-photo-wrap {
+    width: 180px !important;
+    height: 180px !important;
+  }
+
+  /* Hero boutons : full width */
+  .hero-grid > div:first-child .hero-animate-4 {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  .hero-grid > div:first-child .hero-animate-4 .btn {
+    justify-content: center;
+    width: 100%;
+  }
+
+  /* Stats : 1 colonne */
+  .stats-row { grid-template-columns: 1fr !important; }
+
+  /* Passions : 1 colonne */
+  .reveal.delay-3[style*="grid-template-columns"] {
+    grid-template-columns: 1fr !important;
+  }
+
+  /* Section subtitle */
+  .section-subtitle { font-size: 0.95rem !important; }
+
+  /* Boutons généraux */
+  .btn-lg { padding: 14px 28px !important; font-size: 0.95rem !important; }
+
+  /* Tags : plus petits */
+  .tag { font-size: 0.7rem !important; padding: 3px 10px !important; }
+
+  /* Project cards */
+  .project-card-body { padding: 16px !important; }
+  .project-card-title { font-size: 1rem !important; }
+
+  /* Contact items */
+  .contact-item { padding: 14px !important; flex-direction: column; align-items: center; text-align: center; }
+  .contact-item-value { font-size: 0.82rem !important; }
+
+  /* About buttons */
+  .about-grid .hero-animate-4 { justify-content: center; }
+  .about-grid .hero-animate-4 .btn { width: 100%; justify-content: center; }
+
+  /* Detail */
+  .detail-title { font-size: 1.6rem !important; }
+  .detail-img-main { height: 180px !important; }
+  .detail-meta { gap: 12px !important; font-size: 0.8rem !important; }
+
+  /* Mobile menu */
+  .mobile-menu { padding: 16px 14px 24px !important; }
+  .mobile-menu a { font-size: 1rem !important; padding-bottom: 14px !important; }
+}
